@@ -984,7 +984,8 @@
 }
 
 .teal-text {
-  color: #009688 !important;
+  /* color: #009688 !important; */
+  color: midnightblue !important;
 }
 
 .teal.lighten-5 {
@@ -1004,7 +1005,8 @@
 }
 
 .teal.lighten-3 {
-  background-color: #80cbc4 !important;
+  /* background-color: #80cbc4 !important; */
+  background-color: red !important;
 }
 
 .teal-text.text-lighten-3 {
@@ -2128,7 +2130,8 @@
 }
 
 .white-text {
-  color: #FFFFFF !important;
+  /* color: #FFFFFF !important; */
+  color: #FFFF00 !important;
 }
 
 .transparent {
