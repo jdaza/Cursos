@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hola</title>
+        <meta charset="utf-8"></meta>
+    </head>
+    <style type="text/css">
+        .cuadrado
+        {
+            background-color: red;
+            height: 100px;
+            width: 100px
+        }
+        .cuadradoAzul{
+            background-color: blue;
+            height: 100px;
+            width: 100px
+        }
+    </style>
+
+    <body>
+
+        <!--Encabezados-->
+        <h1 class="cuadrado"> hola</h1>        
+        <h2>mundo </h2>
+        <h3> :) </h3>
+
+        <!--Contenedor Div-->
+        <div class="cuadradoAzul">
+            <h4> Contenido dentro del div</h4>
+        </div>
+
+        <!--Contenedor mas grande que un div-->
+        <section>
+           <h5> Contenido dentro del section. 
+               <!--Salto de linea-->
+               <br>
+
+               Con salto de linea
+            </h5>
+        </section>
+        <!--Lista de elementos-->
+        <li>
+            <a href =""> 1 </a>
+            <a href =""> 2 </a>
+            <a href =""> 5 </a>
+            <a href =""> 0 </a>
+        </li>
+        <!--Lista de elementos ordenada da espacios y ordena la lista-->
+        <ol>
+            <li><a href =""> 1 </a></li>
+            <li><a href =""> 2 </a></li>
+            <li><a href =""> 5 </a></li>
+            <li><a href =""> 0 </a></li>
+        </ol>
+
+        <!--Lista no ordenada pero con div interno para que tenga un espaciado-->
+        <ul>
+            <li><a href =""> 1 </a></li>
+            <li><a href =""> 2 </a></li>
+            <li><a href =""> 5 </a></li>
+            <li><a href =""> 0 </a></li>
+        </ul>
+
+    <!--Forma de pasar parametros en la direccion de la página.
+    Direccion?query=parametro
+    Direccion?q=parametro-->
+
+    <!--para multimedia, para mostrar imagenes y videos.-->
+    <img src="foto.jpg">
+    <!--Esta es la forma de pasar una imagen por texto, se usa al recuperar info de una DB y no de un repositorio.-->
+    <img src="data:image/jpeg;base64, ndnfksjdnfkjsdnfkjsdnf">
+    <video src="video.mp4"></video>
+    <audio src="audio.mp3"></audio>
+
+    <!--Ejemplo de formulario-->
+    <form action="enviar">
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre"></input>
+            <input type="date" name=""></input>
+            <input type="email" name=""></input>
+            <input type="password" name=""></input>
+            <input type="week" name=""></input>
+            <input type="button" name="" value="Hazme click!"></input>
+
+
+        </div>
+        <button>Nosh created this.</button>
+
+        <div id="titulo">
+            josh
+            <h1 id="subtitulo"> hi   </h1>
+
+        </div>
+    </form>
+    </body>
+</html>
+
