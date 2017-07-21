@@ -36,3 +36,8 @@ $('#titulo')
 //InnerHtml
 
 //OuterHtml
+
+/**
+ * JSON
+ * no es lo mismo que un objeto literario
+ */
