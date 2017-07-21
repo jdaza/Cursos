@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <!-- <nav>
+    <div>
+      <ul>
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScripts</a></li>
+      </ul>
+    </div>
+  </nav> -->
+
+  <!-- contenido -->
+  <div class="container">
+    <h1 id="titulo">Todo list</h1>
+    <button id="btnAgregar" onclick="desdeHtml()">Agregar 01</button>
+    <button id="btnJS1"     >Desde Javascript1</button>
+    <button id="btnJS2"     >Desde JavaScript2</button>
+
+    <input id="input" type="text">
+    <button id="btnAgregarALista">Agregar a la lista</button>
+    <div id="board">
+      <ol id="olLista"></ol>
+    </div>
+  </div>
+
+<!--  Scripts-->
+<script src="js/jquery.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script>
+  var desdeHtml = () => {
+    console.log('Evento desde html');
+  }
+
+  var desdeJS1 = () =>{
+    console.log('Desde JS 1');
+  }
+
+  var desdeJS2 = () =>{
+    console.log('Desde JS 2');
+  }
+
+  /**
+   * El siguiente codigo muestra la asignacion de funcionalidad al click de un boton
+   * por medio de dos formas diferentes.
+  */
+  var btnJS1 = document.getElementById('btnJS1');
+  btnJS1.onclick = desdeJS1;
+
+  var btnJS2 = document.getElementById('btnJS2');
+  btnJS2.addEventListener('click', desdeJS2)
+
+  var elementos = 0;
+
+  //TODO: Terminar este metodo para que elmine el row en el que esta.
+  var borrarElemento =(identificador) =>{
+    //debugger;
+    var elemento = document.getElementById(identificador);
+    elemento.outerHTML = "";
+  }
+
+
+  var agregarTareaALista = () =>{
+    // let taskList = document.getElementById("board");
+    // let tarea = document.getElementById("input").value;
+    // taskList.innerHTML = taskList.innerHTML + `<h3>${tarea}</h3>`;
+    
+    let taskList = document.getElementById("olLista");
+    let tarea = document.getElementById("input").value;
+    // taskList.innerHTML = taskList.innerHTML + `<li>${tarea}</li>`;
+    ++elementos;
+    taskList.innerHTML = taskList.innerHTML + `<li id="li${elementos}" class="collection-item">
+        ${tarea}
+        <button onclick="borrarElemento('li${elementos}')"> X </button>
+      </li>`;
+  }
+ 
+  var btnAgregar = document.getElementById("btnAgregarALista");
+  btnAgregar.onclick = agregarTareaALista;
+
+</script>
+  </body>
+</html>
