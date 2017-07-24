@@ -11,16 +11,95 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<div class="container row">
+<div id="board" class="container row">
 
-
-</div>
+<!-- <div class="col s12 m6 card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="yuna.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+</div> -->
 
 <!--  Scripts-->
 <script src="js/jquery.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
 <script>
+
+class Person{
+  constructor(id, name, lastName, picture){
+    this.id = id;
+    this.name = name;
+    this.lastName = lastName;
+    this.picture = picture;
+  }
+
+  show(){
+    console.log(`nombre: ${this.name}
+    apellido: ${this.lastName}
+    foto: ${this.picture}`);
+  }
+
+  getCard(){
+    let html = `<div class="col s12 m6 card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="${this.picture}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${this.name} ${this.lastName}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">${this.name} ${this.lastName}<i class="material-icons right">close</i></span>
+      <p>${this.id} <br>
+        ${this.name} <br>
+        ${this.lastName} <br></p>
+    </div>
+  </div>`;
+  return html;
+  }
+}
+
+var getData = (url) => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("get", url);
+    xhr.onload = () => resolve(xhr.responseText);
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
+};
+
+url = "https://reqres.in/api/users?page=2";
+
+//Request a un servidor REST
+getData(url).then((data) => {
+  //Se ejecuta cuando la promesa se cumplio y el resultado es correcto.
+  console.log(data);  
+
+  //Se utilizan los datos retornados;
+  var info = JSON.parse(data);
+  for(let item of info.data){
+    let person = new Person(item.id, item.first_name, item.last_name, item.avatar);
+    document.getElementById('board').innerHTML += person.getCard();
+    // person.show();
+  }
+
+}).catch((error) =>{
+  //Se ejecuta cuando la promesa no se cumplio y vota un error.
+  //TODO: Revisar como modificar el codigo para que manejar timeouts.
+  console.log(error);
+});
+
+
 
 </script>
   </body>
@@ -44,6 +123,7 @@
 -->
 
 <!-- url = 'https://reqres.in/api/users/2';
+  url = 'https://reqres.in/api/users?page=2';
 var ajax = new XMLHttpRequest();
 var data;
 ajax.open('get',url);
