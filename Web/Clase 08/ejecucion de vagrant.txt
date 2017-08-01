@@ -1,0 +1,167 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+e:\Cursos\Virtuales>mkdir wb17
+
+e:\Cursos\Virtuales>cd wb17
+
+e:\Cursos\Virtuales\wb17>vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+
+e:\Cursos\Virtuales\wb17>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+e:\Cursos\Virtuales\wb17>dir
+ Volume in drive E is Data
+ Volume Serial Number is 0C13-8B9A
+
+ Directory of e:\Cursos\Virtuales\wb17
+
+07/28/2017  07:32 PM    <DIR>          .
+07/28/2017  07:32 PM    <DIR>          ..
+07/28/2017  05:00 PM       295,255,040 precise32.box
+07/28/2017  07:31 PM             3,111 Vagrantfile
+               2 File(s)    295,258,151 bytes
+               2 Dir(s)  23,946,690,560 bytes free
+
+e:\Cursos\Virtuales\wb17>vagrant box add wbtest precise32.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'wbtest' (v0) for provider:
+    box: Unpacking necessary files from: file://e:/Cursos/Virtuales/wb17/precise32.box
+    box: Progress: 100% (Rate: 718M/s, Estimated time remaining: --:--:--)
+==> box: Successfully added box 'wbtest' (v0) for 'virtualbox'!
+
+e:\Cursos\Virtuales\wb17>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'wbtest'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: wb17_default_1501285268928_32638
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection reset. Retrying...
+    default: Warning: Connection aborted. Retrying...
+    default:
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default:
+    default: Guest Additions Version: 4.2.0
+    default: VirtualBox Version: 5.1
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => E:/Cursos/Virtuales/wb17
+
+e:\Cursos\Virtuales\wb17>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Clearing any previously set forwarded ports...
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default:
+    default: Guest Additions Version: 4.2.0
+    default: VirtualBox Version: 5.1
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => E:/Cursos/Virtuales/wb17
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+
+e:\Cursos\Virtuales\wb17>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> default: flag to force provisioning. Provisioners marked to run always will still run.
+
+e:\Cursos\Virtuales\wb17>vagrant ssh
+Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+
+ * Documentation:  https://help.ubuntu.com/
+New release '14.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Welcome to your Vagrant-built virtual machine.
+Last login: Fri Sep 14 06:22:31 2012 from 10.0.2.2
+vagrant@precise32:~$ ls
+postinstall.sh
+vagrant@precise32:~$ cd..
+cd..: command not found
+vagrant@precise32:~$ cd..
+cd..: command not found
+vagrant@precise32:~$ dir
+postinstall.sh
+vagrant@precise32:~$ ls
+postinstall.sh
+vagrant@precise32:~$ cd..
+cd..: command not found
+vagrant@precise32:~$ cd ..
+vagrant@precise32:/home$ ls
+vagrant
+vagrant@precise32:/home$ cd ..
+vagrant@precise32:/$ dir
+bin   dev  home        lib         media  opt   root  sbin     srv  tmp  vagrant  vmlinuz
+boot  etc  initrd.img  lost+found  mnt    proc  run   selinux  sys  usr  var
+vagrant@precise32:/$ cd vagrant_data/
+-bash: cd: vagrant_data/: No such file or directory
+vagrant@precise32:/$ mkdir vagrant_data
+mkdir: cannot create directory `vagrant_data': Permission denied
+vagrant@precise32:/$ cd vagrant\
+> index.html
+-bash: cd: vagrantindex.html: No such file or directory
+vagrant@precise32:/$ dir
+bin   dev  home        lib         media  opt   root  sbin     srv  tmp  vagrant  vmlinuz
+boot  etc  initrd.img  lost+found  mnt    proc  run   selinux  sys  usr  var
+vagrant@precise32:/$ cd vagrant/
+vagrant@precise32:/vagrant$ touch index.html
+vagrant@precise32:/vagrant$ ls
+data  index.html  precise32.box  Vagrantfile
+vagrant@precise32:/vagrant$ vagrant halt
+The program 'vagrant' is currently not installed.  You can install it by typing:
+sudo apt-get install vagrant
+vagrant@precise32:/vagrant$
+vagrant@precise32:/vagrant$
+vagrant@precise32:/vagrant$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+e:\Cursos\Virtuales\wb17>
