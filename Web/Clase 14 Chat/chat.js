@@ -27,6 +27,21 @@ PS E:\Cursos\Cursos\Web\Clase 14 Chat\umss> lb datasource
 ? database: umss
 ? Install loopback-connector-mongodb@^1.4 Yes
 
+
+lb model
+estudiante
+
+PS E:\Cursos\Cursos\Web\Clase 14 Chat\umss> lb model
+? Enter the model name: estudiante
+? Select the datasource to attach estudiante to: mongo (mongodb)
+? Select model's base class PersistedModel
+? Expose estudiante via the REST API? Yes
+? Custom plural form (used to build REST URL):
+? Common model or server only? common
+Let's add some estudiante properties now.
+
+
+
  */
 
 <http>
